@@ -1,0 +1,41 @@
+{
+  "$schema": "https://raw.githubusercontent.com/code-yeongyu/oh-my-opencode/master/assets/oh-my-opencode.schema.json",
+  "google_auth": false,
+  "defaults": {
+    "primary_agent": "sisyphus",
+    "coding_agent": "opencoder",
+    "research_agent": "oracle"
+  },
+  "agents": {
+    "sisyphus": {
+      "model": "zai-coding-plan/glm-4.7",
+      "role": "engineering_manager",
+      "capabilities": ["planning", "delegation", "review", "orchestration"],
+      "description": "Primary orchestrator with reasoning enabled. Plans multi-step solutions."
+    },
+    "opencoder": {
+      "model": "github-copilot/gpt-5-mini",
+      "role": "implementation",
+      "capabilities": ["coding", "refactoring", "testing", "debugging"],
+      "description": "Graph-aware coder using GPT-5-mini. Primary implementation agent."
+    },
+    "oracle": {
+      "model": "zai-coding-plan/glm-4.6",
+      "role": "research_specialist",
+      "capabilities": ["research", "documentation", "web_search"],
+      "description": "Research specialist. Web search and documentation lookups."
+    },
+    "speed_reader": {
+      "model": "zai-coding-plan/glm-4.5-air",
+      "role": "analyzer",
+      "capabilities": ["analysis", "summarization", "quick_read"],
+      "description": "Ultra-fast agent for quick code analysis and summarization."
+    },
+    "fast_coder_grok": {
+      "model": "github-copilot/grok-code-fast-1",
+      "role": "complex_implementation",
+      "capabilities": ["complex_coding", "large_context", "reasoning_loops"],
+      "description": "Agentic coding agent with 256K context. For complex multi-step tasks."
+    }
+  }
+}
